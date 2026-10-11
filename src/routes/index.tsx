@@ -14,11 +14,11 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "/og-image.jpg" },
+      { property: "og:image", content: "/__l5e/assets-v1/73c2ae56-f73a-453f-b4f3-c7516f9b1a2c/og-image.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "/og-image.jpg" },
+      { name: "twitter:image", content: "/__l5e/assets-v1/73c2ae56-f73a-453f-b4f3-c7516f9b1a2c/og-image.jpg" },
     ],
   }),
   component: Index,
@@ -98,7 +98,7 @@ function Index() {
         <section id="demo" className={`${wrap} scroll-mt-20 py-16`}>
           <H2>See it work, from a real call to a measured change.</H2>
           <div className="card mt-8 overflow-hidden p-2">
-            <video controls preload="metadata" poster="/pitch-poster.jpg" src={pitchVideo.url} className="aspect-video w-full rounded-[14px] bg-background">
+            <video controls preload="metadata" poster="/__l5e/assets-v1/e9d8fca7-6686-47ab-9e2f-fbb23a1b7474/pitch-poster.jpg" src={pitchVideo.url} className="aspect-video w-full rounded-[14px] bg-background">
               Your browser does not support video.
             </video>
           </div>
@@ -129,9 +129,9 @@ function Index() {
           <H2>How it works</H2>
           <div className="mt-12 space-y-16">
             {[
-              ["A coach that calls back.", "NOVA talks with the employee by phone about where they want to grow and what gets in the way, helps them choose one small step, and calls back after the due date: “Did you get to it? How did your colleagues react?”", "/screen-2-draft-for-manager.jpg", "NOVA app screen showing a drafted message for the manager"],
-              ["Honest, anonymous pulse.", "A two-minute voice check-in. NOVA keeps the numbers and a few themes (like “growth” or “workload”), and throws away the words.", "/pulse-scene.jpg", "An employee doing an anonymous voice pulse check-in"],
-              ["Managers act, and see if it worked.", "Team trends, top concerns and suggested actions, only for groups of at least 5 people. Every action is published back to employees as “You said, we did”, and its effect shows up in the next check-ins.", "/screen-7-action-effect.jpg", "NOVA app screen showing the measured effect of a manager action"],
+              ["A coach that calls back.", "NOVA talks with the employee by phone about where they want to grow and what gets in the way, helps them choose one small step, and calls back after the due date: “Did you get to it? How did your colleagues react?”", "/__l5e/assets-v1/bf1ef906-0a8e-467d-b007-92845e14198a/screen-2-draft-for-manager.jpg", "NOVA app screen showing a drafted message for the manager"],
+              ["Honest, anonymous pulse.", "A two-minute voice check-in. NOVA keeps the numbers and a few themes (like “growth” or “workload”), and throws away the words.", "/__l5e/assets-v1/9a9d6235-cf24-4786-bab5-f79b9b939f1e/pulse-scene.jpg", "An employee doing an anonymous voice pulse check-in"],
+              ["Managers act, and see if it worked.", "Team trends, top concerns and suggested actions, only for groups of at least 5 people. Every action is published back to employees as “You said, we did”, and its effect shows up in the next check-ins.", "/__l5e/assets-v1/6c1e8983-0a01-47ed-a409-7fe732edb01b/screen-7-action-effect.jpg", "NOVA app screen showing the measured effect of a manager action"],
             ].map(([t, d, img, alt], i) => (
               <div key={t} className="grid items-center gap-8 md:grid-cols-2">
                 <div className={i % 2 ? "md:order-2" : ""}>
@@ -150,10 +150,10 @@ function Index() {
           <H2>Built for every role</H2>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              ["Employee", "A private space to grow; nothing reaches the company unless they approve the exact sentence.", "/screen-1-my-voice.jpg"],
-              ["Manager", "What's in the team's way, questions for 1:1s, and requests people chose to share.", "/screen-4-request-reply.jpg"],
-              ["Leadership", "Engagement by department, attrition risk per team, and whether decisions actually helped.", "/screen-6-heatmap.jpg"],
-              ["HR", "Pulse and engagement campaigns by voice, with closed-loop follow-up.", "/screen-3-team-trend.jpg"],
+              ["Employee", "A private space to grow; nothing reaches the company unless they approve the exact sentence.", "/__l5e/assets-v1/67b0b929-4adc-4aaf-9fac-e1247bec9c58/screen-1-my-voice.jpg"],
+              ["Manager", "What's in the team's way, questions for 1:1s, and requests people chose to share.", "/__l5e/assets-v1/ef59d682-254b-408a-a307-a88f75c9f424/screen-4-request-reply.jpg"],
+              ["Leadership", "Engagement by department, attrition risk per team, and whether decisions actually helped.", "/__l5e/assets-v1/e095ef3c-42ee-4f13-9508-f27dd8a7818a/screen-6-heatmap.jpg"],
+              ["HR", "Pulse and engagement campaigns by voice, with closed-loop follow-up.", "/__l5e/assets-v1/4d885f0a-3f9b-430b-b25c-29a6333d12c5/screen-3-team-trend.jpg"],
             ].map(([t, d, img]) => (
               <div key={t} className="card flex flex-col p-5">
                 <img src={img} alt={`NOVA app screen for the ${t} role`} loading="lazy" className="aspect-[4/3] w-full rounded-xl object-cover object-top" />
