@@ -142,3 +142,56 @@
     color: var(--color-foreground);
   }
 }
+
+:root {
+  --background: oklch(0.13 0.008 285);
+  --foreground: oklch(0.97 0.002 286);
+  --muted-foreground: oklch(0.75 0.02 285);
+  --primary: oklch(0.6 0.15 252);
+  --primary-foreground: oklch(0.99 0 0);
+  --border: oklch(1 0 0 / 12%);
+  --ring: oklch(0.75 0.12 270);
+  --glow-blue: oklch(0.5 0.21 266 / 30%);
+  --glow-violet: oklch(0.5 0.21 290 / 20%);
+  --accent-from: oklch(0.75 0.13 272);
+  --accent-to: oklch(0.79 0.11 300);
+  --positive: oklch(0.72 0.19 147);
+  --warm: oklch(0.88 0.12 80);
+  --negative: oklch(0.65 0.2 25);
+}
+@theme inline {
+  --color-positive: var(--positive);
+  --color-warm: var(--warm);
+  --color-negative: var(--negative);
+  --color-accent-from: var(--accent-from);
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+body {
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(60rem 40rem at 100% 0%, var(--glow-blue), transparent 60%),
+    radial-gradient(50rem 40rem at 0% 100%, var(--glow-violet), transparent 60%),
+    var(--background);
+  background-attachment: fixed;
+}
+html { scroll-behavior: smooth; }
+:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; border-radius: 6px; }
+@utility tight { letter-spacing: -0.03em; }
+@utility text-gradient {
+  background: linear-gradient(90deg, var(--accent-from), var(--accent-to));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+@utility card {
+  background: oklch(1 0 0 / 5%);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+}
+@utility orb {
+  background: radial-gradient(circle at 40% 35%, oklch(1 0 0), oklch(0.87 0.05 270) 35%, oklch(0.6 0.18 266) 75%, transparent 76%);
+  border-radius: 9999px;
+  box-shadow: 0 0 120px 40px oklch(0.6 0.18 266 / 35%);
+  animation: breathe 7s ease-in-out infinite;
+}
+@keyframes breathe { 0%,100% { transform: scale(1); opacity: .55 } 50% { transform: scale(1.08); opacity: .8 } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; scroll-behavior: auto !important; } }
