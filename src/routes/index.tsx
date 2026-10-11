@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import pitchVideo from "@/assets/nova-coach-pitch.mp4.asset.json";
+import pitchVideo from "@/assets/nova-coach-pitch-2.mp4.asset.json";
 
 const TITLE = "NOVA Coach: a personal AI coach that calls every employee";
 const DESC =
