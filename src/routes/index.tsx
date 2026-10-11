@@ -45,6 +45,14 @@ function H2({ children }: { children: React.ReactNode }) {
 
 function Index() {
   const [scrolled, setScrolled] = useState(false);
+  const [zoom, setZoom] = useState<{ src: string; alt: string } | null>(null);
+  useEffect(() => {
+    if (!zoom) return;
+    const k = (e: KeyboardEvent) => e.key === "Escape" && setZoom(null);
+    window.addEventListener("keydown", k);
+    document.body.style.overflow = "hidden";
+    return () => { window.removeEventListener("keydown", k); document.body.style.overflow = ""; };
+  }, [zoom]);
   useEffect(() => {
     const f = () => setScrolled(window.scrollY > 10);
     f();
@@ -139,7 +147,7 @@ function Index() {
                   <h3 className="mt-3 text-2xl font-bold tight sm:text-3xl">{t}</h3>
                   <p className="mt-4 text-lg text-muted-foreground">{d}</p>
                 </div>
-                <img src={img} alt={alt} loading="lazy" className="card w-full p-1" />
+                <button type="button" onClick={() => setZoom({ src: img ?? "", alt: alt ?? "" })} className="cursor-zoom-in" aria-label={`Enlarge: ${alt}`}><img src={img} alt={alt} loading="lazy" className="card w-full p-1" /></button>
               </div>
             ))}
           </div>
@@ -156,7 +164,7 @@ function Index() {
               ["HR", "Pulse and engagement campaigns by voice, with closed-loop follow-up.", "/__l5e/assets-v1/4d885f0a-3f9b-430b-b25c-29a6333d12c5/screen-3-team-trend.jpg"],
             ].map(([t, d, img]) => (
               <div key={t} className="card flex flex-col p-5">
-                <img src={img} alt={`NOVA app screen for the ${t} role`} loading="lazy" className="aspect-[4/3] w-full rounded-xl object-cover object-top" />
+                <img onClick={() => setZoom({ src: img ?? "", alt: `NOVA app screen for the ${t} role` })} src={img} alt={`NOVA app screen for the ${t} role`} loading="lazy" className="aspect-[4/3] w-full cursor-zoom-in rounded-xl object-cover object-top" />
                 <h3 className="mt-5 text-lg font-semibold">{t}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{d}</p>
               </div>
@@ -267,6 +275,12 @@ function Index() {
           <p>© 2026 NOVA AI · Hackathon project</p>
         </div>
       </footer>
+      {zoom && (
+        <div role="dialog" aria-modal="true" aria-label={zoom.alt} onClick={() => setZoom(null)} className="fixed inset-0 z-[100] flex cursor-zoom-out items-center justify-center bg-background/90 p-4 backdrop-blur-sm">
+          <img src={zoom.src} alt={zoom.alt} className="max-h-full max-w-full rounded-xl" />
+          <button type="button" aria-label="Close" className="absolute right-4 top-4 rounded-full bg-foreground/10 px-3 py-1 text-2xl text-foreground">×</button>
+        </div>
+      )}
     </>
   );
 }
