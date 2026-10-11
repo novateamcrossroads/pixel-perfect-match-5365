@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import pitchVideo from "@/assets/nova-coach-pitch.mp4.asset.json";
 
 const TITLE = "NOVA Coach: a personal AI coach that calls every employee";
 const DESC =
@@ -97,7 +98,7 @@ function Index() {
         <section id="demo" className={`${wrap} scroll-mt-20 py-16`}>
           <H2>See it work, from a real call to a measured change.</H2>
           <div className="card mt-8 overflow-hidden p-2">
-            <video controls preload="metadata" poster="/pitch-poster.jpg" src="/nova-coach-pitch.mp4" className="aspect-video w-full rounded-[14px] bg-background">
+            <video controls preload="metadata" poster="/pitch-poster.jpg" src={pitchVideo.url} className="aspect-video w-full rounded-[14px] bg-background">
               Your browser does not support video.
             </video>
           </div>
