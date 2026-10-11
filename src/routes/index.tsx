@@ -232,9 +232,9 @@ function Index() {
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
               ["Oleg Zaim", "AI Product Engineer"],
-              ["Viktor Moreev", "Frontend and design"],
-              ["Nick Kazakov", "Backend, integrations and frontend, UI/UX"],
-              ["Andrea", "Sales & Delivery Manager"],
+              ["Viktor Moreev", "Software Architect"],
+              ["Nick Kazakov", "Integrations & UI/UX"],
+              ["Andrea Pirkov", "Delivery Manager"],
             ].map(([n, r]) => (
               <div key={n} className="card flex items-center gap-4 p-6">
                 <span aria-hidden className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground">
