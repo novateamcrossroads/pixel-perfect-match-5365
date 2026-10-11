@@ -228,11 +228,12 @@ function Index() {
         {/* Team */}
         <section className={`${wrap} py-16`}>
           <H2>Team</H2>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              ["Oleg Zaim", "Phone assistant and NOVA Coach"],
+              ["Oleg Zaim", "AI Product Engineer"],
               ["Viktor Moreev", "Frontend and design"],
-              ["Nick Kazakov", "Backend, integrations and frontend"],
+              ["Nick Kazakov", "Backend, integrations and frontend, UI/UX"],
+              ["Andrea", "Sales & Delivery Manager"],
             ].map(([n, r]) => (
               <div key={n} className="card flex items-center gap-4 p-6">
                 <span aria-hidden className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground">
