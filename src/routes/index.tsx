@@ -236,7 +236,7 @@ function Index() {
             ].map(([n, r]) => (
               <div key={n} className="card flex items-center gap-4 p-6">
                 <span aria-hidden className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground">
-                  {n.split(" ").map((w) => w.charAt(0)).join("")}
+                  {(n ?? "").split(" ").map((w) => w.charAt(0)).join("")}
                 </span>
                 <div>
                   <h3 className="font-semibold">{n}</h3>
